@@ -1,0 +1,227 @@
+.box {
+  height: 50vh;
+  width: 66vw;
+  position: absolute;
+  left: calc(50% - 33vw);
+  top: 340px;
+  z-index: 1000;
+  mix-blend-mode: overlay;
+
+  .box-row {
+    display: flex;
+    justify-content: space-around;
+
+    .pixel {
+      background-color: #c4c4c4;
+      border-radius: 50%;
+      transition: opacity 0.9s ease-in-out;
+    }
+
+    .pixel:hover {
+      opacity: 0 !important;
+
+    }
+
+    .pixel-clicked {
+      opacity: 0 !important;
+
+    }
+
+  }
+
+}
+
+.sky {
+  height: 100vh;
+  width: 100vw;
+
+  .sky-gradient-day,
+  .sky-gradient-night {
+    height: 100vh;
+    position: absolute;
+    width: 100vw;
+    z-index: 4;
+  }
+
+  .mountains {
+    width: 100%;
+    bottom: 0px;
+    position: absolute;
+    z-index: 5;
+    left: 0;
+  }
+
+  .cactus {
+    width: 94px;
+    position: absolute;
+    left: 95px;
+    bottom: 380px;
+    z-index: 4;
+  }
+}
+
+.sky-night {
+  background-color: rgb(14, 26, 66);
+  transition: all 10s ease-in-out;
+
+  .sky-gradient-night {
+    background-image: linear-gradient(to bottom, transparent, rgb(28, 51, 129));
+    opacity: 1;
+    transition: all 10s ease-in-out;
+  }
+
+  .sky-gradient-day {
+    opacity: 0;
+    transition: all 10s ease-in-out;
+  }
+
+  .mountains,
+  .cactus {
+    mix-blend-mode: darken;
+    fill: #040819;
+    opacity: 0.8;
+    transition: all 10s ease-in-out;
+  }
+}
+
+.sky-day {
+  background-color: rgb(23, 157, 219);
+  transition: all 10s ease-in-out;
+
+
+  .sky-gradient-night {
+    opacity: 0;
+    transition: all 10s ease-in-out;
+  }
+  
+  .sky-gradient-day {
+    background-image: linear-gradient(to bottom, transparent, #e0f0ff);
+    opacity: 1;
+    transition: all 10s ease-in-out;
+  }
+
+  .mountains {
+    fill: #8e8461;
+    opacity: 0.5;
+    mix-blend-mode: normal;
+    transition: all 10s ease-in-out;
+  }
+
+  .cactus {
+    fill: #66ad87;
+    opacity: 0.5;
+    mix-blend-mode: normal;
+    transition: all 10s ease-in-out;
+  }
+}
+
+.ground {
+  height: 0vh;
+}
+
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 450px;
+}
+
+
+#btnDebug {
+  position: fixed;
+  z-index: 1;
+  top: 10px;
+  left: 10px;
+}
+
+.star {
+  fill: white;
+  animation: pulse var(--star-animation-duration, 1000ms) infinite backwards,
+    glowing var(--star-animation-glow-duration, 1000ms) infinite alternate backwards;
+  animation-delay: var(--star-animation-delay, 0);
+}
+
+#starGroup {
+  --dur: 100ms;
+}
+
+.cloud {
+  fill: white;
+  animation-name: movement var(--cloud-animation-duration, 1000ms) infinite backwards;
+  animation-delay: var(--cloud-animation-delay, 0);
+}
+
+#cloudGroup {
+  --dur: 100ms;
+}
+
+@keyframes movement {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: 1000px;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#svgCanvas {
+  width: 100vw;
+  height: calc(100vh - 250px);
+  z-index: 3;
+  transition: all 10s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.invisible {
+  opacity: 0;
+  transition: all 10s ease-in-out;
+}
+
+
+
+#edp00lhwzc1q4_to {
+  animation: movemen 15000ms linear infinite normal forwards;
+  animation-delay: var(--delay,3000ms);
+
+}
+
+@keyframes movemen {
+  0% {
+    transform: translate(-25vw, var(--yAxis, 400px))
+  }
+
+  60% {
+    transform: translate(100vw, var(--yAxis, 400px))
+  }
+
+  100% {
+    transform: translate(100vw, var(--yAxis, 400px))
+  }
+}
