@@ -4,4 +4,4 @@
 
 ![Day](https://raw.githubusercontent.com/johnyzelba/Just-Another-Clock/master/day.gif)
 
-`<addr>` SVG & CSS only
+`<SVG & CSS only>` 
